@@ -1,5 +1,33 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>This is our home page</h1>
+
+<section class="heading">
+    <h1 style="color:red;">This is our home page</h1>
+</section>
+<section class="my-first-music">
+<p>I going to try to add a music here. And we will see if it works.</p>
+
+<audio src="{% static 'Songs/HanumanChalisa.mp3' %}" controls>Error: your web browser does not support this audio player.</audio>
+
+<p>Now I am going to try to add a video file here and play it. Let's see if it's get successful.</p>
+
+<video width="320" height="240" preload="auto" controls>
+    <source src="{% static 'Video/SojugadaSoojuLordShiva.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<p>Adding another video.</p>
+
+<video width="320" height="240" preload="auto" controls>
+    <source src="{% static 'Video/RukJanaNahin.mkv' %}" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+</section>
+
+
+
+
 {% endblock %}
