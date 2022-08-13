@@ -1,33 +1,35 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block style %}
+<link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <section class="heading">
     <h1 style="color:red;">This is our home page</h1>
 </section>
 <section class="my-first-music">
-<p>I going to try to add a music here. And we will see if it works.</p>
+    <p>I going to try to add a music here. And we will see if it works.</p>
 
-<audio src="{% static 'Songs/HanumanChalisa.mp3' %}" controls>Error: your web browser does not support this audio player.</audio>
+    <audio src="{% static 'Songs/HanumanChalisa.mp3' %}" preload="metadata" muted controls>Error: your web browser does not support this audio
+        player.</audio>
 
-<p>Now I am going to try to add a video file here and play it. Let's see if it's get successful.</p>
+    <p>Now I am going to try to add a video file here and play it. Let's see if it's get successful.</p>
 
-<video width="320" height="240" preload="auto" controls>
-    <source src="{% static 'Video/SojugadaSoojuLordShiva.mp4' %}" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+    <video width="320" height="240" preload="metadata" muted controls>
+        <source src="{% static 'Video/SojugadaSoojuLordShiva.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-<p>Adding another video.</p>
+    <p>Adding another video.</p>
 
-<video width="320" height="240" preload="auto" controls>
-    <source src="{% static 'Video/RukJanaNahin.mkv' %}" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+    <video width="320" height="240" preload="metadata" muted controls>
+        <source src="{% static 'Video/RukJanaNahin.mkv' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
 </section>
-
-
-
 
 {% endblock %}
