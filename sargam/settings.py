@@ -46,7 +46,8 @@ INSTALLED_APPS = [
 
     # custom apps
     'pages',
-    'workbilling'
+    'workbilling',
+    'music',
 ]
 
 MIDDLEWARE = [
