@@ -65,6 +65,7 @@ class Song(models.Model):
     singer = models.ManyToManyField(Singer)
     genre = models.CharField(max_length=20, choices=available_genres_choices, default='N/A')
     album = models.ManyToManyField(Album)
+    keywords = models.CharField('Keywords', max_length=5000, default=title)
 
     def __str__(self):
         return self.title
