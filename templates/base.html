@@ -1,25 +1,18 @@
+{% include 'navbar.html' %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sargam: Listen Originals</title>
-    {% block style %}
-    {% endblock %}
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
 </head>
-<body>
-    <section class="navbar">
-        <!-- Menu bar -->
-        <nav>
-            <div class="menu-bar">
-                <span><a href="#" class="home-page">Home</a></span>
-                <span><a href="#" class="about-page">About</a></span>
-                <span><a href="#" class="contact-page">Contact</a></span>
-                <span><a href="#" class="community-page">Community</a></span>
-            </div>
-        </nav>
-    </section>
+
+<body style="background: silver;">
     {% block content %}
     {% endblock %}
     <section class="footer">
@@ -29,4 +22,5 @@
         </footer>
     </section>
 </body>
+
 </html>

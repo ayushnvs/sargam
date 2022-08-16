@@ -5,7 +5,7 @@ from datetime import datetime
 def validate_year(year):
     now = datetime.now()
     current_year = now.year
-    print(current_year)
+    # print(current_year)
     if year > -5000 and year <= int(current_year):
         pass
     else:
@@ -38,8 +38,8 @@ class Author(models.Model):
 
 class Album(models.Model):
     title = models.CharField('Album Title', max_length=500)
-    author = models.ManyToManyField(Author)
-    singer = models.ManyToManyField(Singer)
+    author = models.ManyToManyField(Author, blank=True)
+    singer = models.ManyToManyField(Singer, blank=True)
     released_year = models.IntegerField(validators=[validate_year])
 
     def __str__(self):
@@ -49,6 +49,7 @@ class Album(models.Model):
 class Song(models.Model):
 
     available_genres_choices = [
+        ('deshbhakti', 'DeshBhakti'),
         ('friendship', 'Friedship'),
         ('kids', 'Kids'),
         ('wedding', 'Wedding'),
@@ -59,12 +60,11 @@ class Song(models.Model):
         ('party', 'Party'),
     ]
 
-
     title = models.CharField('Song Title', max_length=500)
-    author = models.ManyToManyField(Author)
-    singer = models.ManyToManyField(Singer)
+    author = models.ManyToManyField(Author, blank=True)
+    singer = models.ManyToManyField(Singer, blank=True)
     genre = models.CharField(max_length=20, choices=available_genres_choices, default='N/A')
-    album = models.ManyToManyField(Album)
+    album = models.ManyToManyField(Album, blank=True)
     keywords = models.CharField('Keywords', max_length=5000, default=title)
 
     def __str__(self):
