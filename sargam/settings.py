@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,10 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 with open(BASE_DIR / '.env', 'r') as environ:
     env_content = environ.readlines()
     # SECURITY WARNING: keep the secret key used in production secret!
-    SECRET_KEY = env_content[0]
+    SECRET_KEY = env_content[0].strip()
     # Allowed Hosts
-    ALLOWED_HOSTS = env_content[1].split(',')
-
+    ALLOWED_HOSTS = env_content[1].strip().split(',')
+    # Getting other data
+    STATIC_DIR_1 = env_content[2].strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,9 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = BASE_DIR / 'static'
+
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static/"),
+    BASE_DIR / 'static',
+    STATIC_DIR_1,
 )
 
 # Default primary key field type
