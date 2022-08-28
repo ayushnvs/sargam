@@ -14,8 +14,22 @@
 <body>
     {% include 'navbar.html' %}
 
-    {% block content %}
-    {% endblock %}
+    <div class="container text-center" style="margin: auto;">
+        <div class="row">
+            <div class="col" style="border:2px solid red">
+                {% include 'LeftSideBar.html' %}
+            </div>
+            <div class="col-8" style="border:2px solid red">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div class="col" style="border:2px solid red">
+                {% include 'LeftSideBar.html' %}
+            </div>
+        </div>
+    </div>
+
+
 
     {% include 'footer.html' %}
 
