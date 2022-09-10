@@ -27,7 +27,7 @@ with open(BASE_DIR / '.env', 'r') as environ:
     # Allowed Hosts
     ALLOWED_HOSTS = env_content[1].strip().split(',')
     # Getting other data
-    STATIC_DIR_1 = env_content[2].strip()
+    # STATIC_DIR_1 = env_content[2].strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,10 +129,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+# STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = (
     BASE_DIR / 'static',
-    STATIC_DIR_1,
+    # STATIC_DIR_1,
 )
 
 # Default primary key field type
