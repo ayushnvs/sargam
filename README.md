@@ -2,4 +2,4 @@
 
 ## Sargam: Listen Originals
 
-Warning: Don't make it public on GitHub. There is an issue with SECRET_KEY.
+Hey there! Welcome to Sargam: Listen Originals
