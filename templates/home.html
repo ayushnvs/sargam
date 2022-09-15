@@ -1,13 +1,47 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!-- <head class="home"> -->
-    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
-<!-- </head> -->
-
 {% block content %}
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img src="{% static 'IMG/banner-1.jpg' %}" class="d-block w-100" alt="banner-1">
+		</div>
+		<div class="carousel-item">
+			<img src="{% static 'IMG/banner-2.jpg' %}" class="d-block w-100" alt="banner-2">
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div style="padding:250px 0 200px 0">
+		<h2 class="text-center"><b>About Us</b></h2>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
+	<div style="padding:200px 0 250px 0">
+		<h2 class="text-center"><b>Community</b></h2>
+		<h3 class="text-center">Come, Join Our Community! Join The Source of Creativity!</h3>
+	</div>
+</div>
 
-<section class="heading">
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section class="heading">
     <h1 style="color:red;">This is our home page</h1>
 </section>
 <section class="my-first-music">
@@ -30,6 +64,4 @@
         Your browser does not support the video tag.
     </video>
 
-</section>
-
-{% endblock %}
+</section> -->

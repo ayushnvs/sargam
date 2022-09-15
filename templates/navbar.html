@@ -1,16 +1,17 @@
 {% load static %}
-<nav class="navbar navbar-dark bg-primary">
+<nav class="navbar navbar-dark bg-primary fixed-top">
   <div class="container-fluid row">
-    <a class="navbar-brand col" href="#">
+    <a class="navbar-brand col" href="/">
       <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       Sargam: Listen Originals
     </a>
-	<a class="navbar-brand col-md-auto" href='#'>Community</a>
-	<a class="navbar-brand col-md-auto" href='#'>Contact</a>
-	<a class="navbar-brand col-md-auto" href='#'>About</a>
-	<a class="navbar-brand col-md-auto" href='#'>
+	<a class="navbar-brand col-md-auto" href='/about/'>About</a>
+	<a class="navbar-brand col-md-auto" href='/community/'>Community</a>
+	<a class="navbar-brand col-md-auto" href='/contact/'>Contact</a>
+	<a class="navbar-brand col-md-auto" href='/login/'>
 		Log In
 		<img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="border-radius:25%;">
 	</a>
   </div>
 </nav>
+<div style="padding-top:56px"></div>
