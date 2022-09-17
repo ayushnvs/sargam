@@ -23,5 +23,6 @@ urlpatterns = [
     path('about/', about_view),
     path('contact/', contact_view),
     path('community/', community_view),
+    path('login/', login_view),
     path('admin/', admin.site.urls),
 ]
