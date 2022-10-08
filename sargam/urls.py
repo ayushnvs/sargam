@@ -26,3 +26,7 @@ urlpatterns = [
     path('login/', login_view),
     path('admin/', admin.site.urls),
 ]
+
+admin.site.site_header = "Sargam: Administration Page"
+admin.site.site_title = "Sargam Administration"
+admin.site.index_title = "Welcome to Sargam Admin Panel"

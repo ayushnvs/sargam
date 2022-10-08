@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'pages',
     'workbilling',
     'music',
+    'members',
 ]
 
 MIDDLEWARE = [
