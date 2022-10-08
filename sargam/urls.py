@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from pages.views import *
+from pages.views import home_view, about_view, contact_view, community_view
+from members.views import login_view
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -25,6 +26,7 @@ urlpatterns = [
     path('community/', community_view),
     path('login/', login_view),
     path('admin/', admin.site.urls),
+    path('/', include('django.contrib.auth.urls')),
 ]
 
 admin.site.site_header = "Sargam: Administration Page"

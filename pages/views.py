@@ -1,23 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-
-# Create your views here.
 def home_view(request, *args, **kwargs):
-    return render(request, 'home.html', {})
+    return render(request, 'sargam/home.html', {})
 
 
 def about_view(request, *args, **kwargs):
-    return render(request, 'about.html', {})
+    return render(request, 'sargam/about.html', {})
 
 
 def community_view(request, *args, **kwargs):
-    return render(request, 'community.html', {})
+    return render(request, 'sargam/community.html', {})
 
 
 def contact_view(request, *args, **kwargs):
-    return render(request, 'contact.html', {})
-
-
-def login_view(request, *args, **kwargs):
-    return render(request, 'login.html', {})
+    return render(request, 'sargam/contact.html', {})
