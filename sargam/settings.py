@@ -37,7 +37,7 @@ CSRF_TRUSTED_ORIGINS = ['https://sargam.ayushvns.repl.co']
 # STATIC_DIR_1 = env_content[2].strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # Application definition
 

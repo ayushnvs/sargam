@@ -132,3 +132,6 @@ dmypy.json
 static/Video
 static/Songs
 static/Images
+
+# Rough files and folders
+rough/
