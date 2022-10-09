@@ -1,8 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def home_view(request, *args, **kwargs):
-    # print(request)
+    if request.user.is_authenticated:
+        return redirect(f'/{request.user.username}')
     return render(request, 'sargam/home.html', {})
 
 

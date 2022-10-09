@@ -16,7 +16,11 @@
             <a class="navbar-brand" href='/community/'>Community</a>
             <a class="navbar-brand" href='/contact/'>Contact</a>
             <a class="navbar-brand" href='/login/'>
-                {{req.user.username}}
+                {% if username %}
+                {{username}}
+                {% else %}
+                Login
+                {% endif %}
                 <img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24"
                     class="d-inline-block align-text-top" style="border-radius:25%;">
             </a>

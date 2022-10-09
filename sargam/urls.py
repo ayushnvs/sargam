@@ -24,10 +24,10 @@ urlpatterns = [
     path('about/', about_view),
     path('contact/', contact_view),
     path('community/', community_view),
-    path('login/', login_view),
+    path('login/', login_view, name='log_in'),
     path('admin/', admin.site.urls),
     path('/', include('django.contrib.auth.urls')),
-    path('username/', loggedin_view, name='loggedIn')
+    path('<str:username>/', loggedin_view, name='loggedIn')
 ]
 
 admin.site.site_header = "Sargam: Administration Page"

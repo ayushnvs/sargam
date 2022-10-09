@@ -10,11 +10,14 @@ def login_view(request, *args, **kwargs):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('loggedIn')
+            return redirect(f'/{username}')
         else:
-            pass
+            return render(request, 'auth/login.html', {})
     else:
         return render(request, 'auth/login.html', {})
 
-def loggedin_view(request, *args, **kwargs):
-    return render(request, 'user/home.html', {})
+
+def loggedin_view(request, username):
+    if username == request.user.username:
+        return render(request, 'user/home.html', {"username": request.user.username})
+    return redirect('log_in')
