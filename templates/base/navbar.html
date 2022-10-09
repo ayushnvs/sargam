@@ -15,12 +15,13 @@
             <a class="navbar-brand" href='/about/'>About</a>
             <a class="navbar-brand" href='/community/'>Community</a>
             <a class="navbar-brand" href='/contact/'>Contact</a>
+            {% if username %}
+            <a class="navbar-brand" href='/'>
+            {{username}}
+            {% else %}
             <a class="navbar-brand" href='/login/'>
-                {% if username %}
-                {{username}}
-                {% else %}
-                Login
-                {% endif %}
+            Login
+            {% endif %}
                 <img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24"
                     class="d-inline-block align-text-top" style="border-radius:25%;">
             </a>
