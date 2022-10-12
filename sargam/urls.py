@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from pages.views import home_view, about_view, contact_view, community_view
-from members.views import login_view, loggedin_view
+from members.views import login_view, loggedin_view, logout_view
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -25,10 +25,10 @@ urlpatterns = [
     path('contact/', contact_view),
     path('community/', community_view),
     path('login/', login_view, name='log_in'),
+    path('logout/', logout_view, name='logged_out'),
+    path('<str:username>/', loggedin_view, name='loggedIn'),
     # path('admin/', admin.site.urls),
     path('billing/', admin.site.urls),
-    path('/', include('django.contrib.auth.urls')),
-    path('<str:username>/', loggedin_view, name='loggedIn')
 ]
 
 admin.site.site_header = "Sargam: Administration Page"
