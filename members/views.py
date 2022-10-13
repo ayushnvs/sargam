@@ -34,4 +34,19 @@ def logout_view(request):
 
 
 def register_user(request):
-    return render(request, 'auth/register_user.html')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        print('Is form valid: ', form.is_valid())
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            # messages.success(request, ('Registraction Successful!'))
+            return redirect(f'/{request.user.username}')
+    else:
+        if request.user.is_authenticated:
+            return redirect(f'/{request.user.username}')
+        form = UserCreationForm()
+    return render(request, 'auth/register.html', {'form': form})

@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 {% block content %}
 <div class="signin-div text-center">
-    <main class="form-signin w-100 m-auto">
+    <main class="form-signin m-auto">
         <form method="POST">
             {% csrf_token %}
             <img class="mb-4" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
@@ -33,8 +33,10 @@
                 </label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
         </form>
+        <label class="mt-5 mb-3">
+            Not a member? <a href="{% url 'register_user' %}">Register</a>
+        </label>
     </main>
 </div>
 {% endblock %}

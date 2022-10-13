@@ -20,10 +20,11 @@
             {{username}}
             {% else %}
             <a class="navbar-brand" href='/login/'>
-            Login
+            Register/Login
             {% endif %}
-                <img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24"
-                    class="d-inline-block align-text-top" style="border-radius:25%;">
+            {% if username %}
+                <img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="border-radius:25%;">
+            {% endif %}
             </a>
         </div>
     </div>

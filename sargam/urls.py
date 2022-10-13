@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from pages.views import home_view, about_view, contact_view, community_view
-from members.views import login_view, loggedin_view, logout_view
+from members.views import login_view, loggedin_view, logout_view, register_user
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -26,6 +26,7 @@ urlpatterns = [
     path('community/', community_view),
     path('login/', login_view, name='log_in'),
     path('logout/', logout_view, name='logged_out'),
+    path('register/', register_user, name='register_user'),
     path('<str:username>/', loggedin_view, name='loggedIn'),
     # path('admin/', admin.site.urls),
     path('billing/', admin.site.urls),
