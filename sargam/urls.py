@@ -28,7 +28,6 @@ urlpatterns = [
     path('logout/', logout_view, name='logged_out'),
     path('register/', register_user, name='register_user'),
     path('<str:username>/', loggedin_view, name='loggedIn'),
-    # path('admin/', admin.site.urls),
     path('billing/', admin.site.urls),
 ]
 

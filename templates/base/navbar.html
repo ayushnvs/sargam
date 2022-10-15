@@ -18,16 +18,13 @@
             {% if username %}
             <a class="navbar-brand" href='/'>
             {{username}}
+				<img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="border-radius:25%;">
             {% else %}
             <a class="navbar-brand" href='/login/'>
             Register/Login
             {% endif %}
-            {% if username %}
-                <img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="border-radius:25%;">
-            {% endif %}
             </a>
         </div>
     </div>
-
 </nav>
 <div style="padding-top:56px"></div>
