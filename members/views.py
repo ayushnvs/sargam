@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 
+verifiedUsers = ['ayushvns', 'akanksha']
 
 def login_view(request, *args, **kwargs):
     if request.method == 'POST':
@@ -23,7 +24,7 @@ def login_view(request, *args, **kwargs):
 
 def loggedin_view(request, username):
     if username == request.user.username:
-        return render(request, 'user/home.html', {"username": request.user.username})
+        return render(request, 'user/home.html', {"username": request.user.username, 'verifiedUsers': verifiedUsers})
     return redirect('log_in')
 
 
