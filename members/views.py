@@ -3,7 +3,8 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 
-verifiedUsers = ['ayushvns', 'akanksha']
+verifiedUsers = ['ayushvns', 'akanksha', 'ayushm']
+
 
 def login_view(request, *args, **kwargs):
     if request.method == 'POST':
@@ -14,7 +15,8 @@ def login_view(request, *args, **kwargs):
             login(request, user)
             return redirect(f'/{username}')
         else:
-            messages.success(request, ('There was an error... Please try again.'))
+            messages.success(request,
+                             ('There was an error... Please try again.'))
             return render(request, 'auth/login.html', {})
     else:
         if request.user.is_authenticated:
@@ -24,7 +26,10 @@ def login_view(request, *args, **kwargs):
 
 def loggedin_view(request, username):
     if username == request.user.username:
-        return render(request, 'user/home.html', {"username": request.user.username, 'verifiedUsers': verifiedUsers})
+        return render(request, 'user/home.html', {
+            "username": request.user.username,
+            'verifiedUsers': verifiedUsers
+        })
     return redirect('log_in')
 
 

@@ -128,7 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Private Files/Folders to exclude
+# Private test Files/Folders to exclude
 static/Video
 static/Songs
 static/Images
