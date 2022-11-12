@@ -1,0 +1,20 @@
+.msc-banner img {
+    width: 50px;
+    height: 50px;
+}
+.msc-buttons img {
+    width: 25px;
+    height: 25px;
+}
+/* .msc-panel > div {
+    border: 2px solid yellow;
+} */
+
+.msc-panel {
+    height: 100%;
+}
+
+.msc-panel-wrapper {
+    height: 5rem;
+    background-color: rgb(255, 214, 78);
+}
