@@ -1,30 +1,39 @@
 {% load static %}
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="nav-event">
-    <div class="container-fluid row">
-        <a class="navbar-brand col-8" href="/">
-            <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo" width="30"
-                height="24" class="d-inline-block align-text-top">
-            Sargam: Listen Originals
-        </a>
-        <button class="navbar-toggler col-2" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+  <div class="container-fluid row">
+    <a class="navbar-brand col-8" href="/">
+      <img src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
+        class="d-inline-block align-text-top">
+      Sargam: Listen Originals
+    </a>
+    <button class="navbar-toggler col-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <a class="navbar-brand" href='/about/'>About</a>
+      <a class="navbar-brand" href='/community/'>Community</a>
+      <a class="navbar-brand" href='/contact/'>Contact</a>
+      {% if username %}
+      <div class="dropdwn-menu">
+        <button class="navbar-brand drop-btn">
+          {{username}}
+          <img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24"
+            class="d-inline-block align-text-top" style="border-radius:25%;">
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <a class="navbar-brand" href='/about/'>About</a>
-            <a class="navbar-brand" href='/community/'>Community</a>
-            <a class="navbar-brand" href='/contact/'>Contact</a>
-            {% if username %}
-            <a class="navbar-brand" href='/'>
-            {{username}}
-				<img src="{% static 'IMG/SargamLogIn.jpg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top" style="border-radius:25%;">
-            {% else %}
-            <a class="navbar-brand" href='/login/'>
-            Register/Login
-            {% endif %}
-            </a>
+        <div class="drpdwn-content">
+          <a class="navbar-brand" href='#'>Profile</a>
+          <a class="navbar-brand" href='/billing/workbilling/billing/'>Billing</a>
+          <a class="navbar-brand" href="{% url 'logged_out' %}">Logout</a>
         </div>
+
+      </div>
+      {% else %}
+      <a class="navbar-brand" href='/login/'>
+        Register/Login
+      </a>
+      {% endif %}
     </div>
+  </div>
 </nav>
 <div id="nav-margin" style="padding-top:56px"></div>

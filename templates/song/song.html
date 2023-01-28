@@ -1,18 +1,23 @@
 {% load static %}
-<div class="msc-panel-wrapper text-center fixed-bottom">
+<div class="msc-panel-wrapper text-center">
     <div class="msc-panel row">
         <div class="msc-banner col-1">
             <img src="{% static 'IMG/dflt-msc-icon.png' %}" alt="music-banner">
         </div>
         <div class="msc-name col">
             <p class="align-bottom">Mere to Giridhar Gopal -by Meera Bai</p>
-            <div class="msc-timer"></div>
+            <div class="msc-timer">
+              <input type="range" value="0" class="seek-bar">
+              <br>
+              <span class="current-time">00:00</span>
+              <span class="song-duration">00:00</span>
+            </div>
         </div>
         <div class="msc-buttons col-3">
-            <img src="{% static 'IMG/fast-forward-round.png' %}" alt="forward-btn" class="msc-forward">
-            <img src="{% static 'IMG/play-button-circled.png' %}" alt="play-btn" class="msc-forward">
-            <img src="{% static 'IMG/pause-button.png' %}" alt="pause-btn" class="msc-forward">
-            <img src="{% static 'IMG/fast-forward-round.png' %}" alt="backward-btn" class="msc-forward">
+          <button class="play-button">
+            <span></span>
+            <span></span>
+          </button>
         </div>
     </div>
 </div>
