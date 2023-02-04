@@ -2,8 +2,21 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
+import os
 
 verifiedUsers = ['ayushvns', 'akanksha', 'ayushm']
+
+available_songs = os.listdir('./static/Songs')
+def get_song_dict(available_songs):
+    Dict = []
+    for songs in available_songs:
+        song_path = f'/static/Songs/{songs}'
+        # print('.' in songs)
+        song_name = songs.split('.')[0]
+        Dict.append({'name': song_name, 'path': song_path})
+    return Dict
+
+# print(get_song_dict(available_songs))
 
 
 def login_view(request, *args, **kwargs):
@@ -28,7 +41,8 @@ def loggedin_view(request, username):
     if username == request.user.username:
         return render(request, 'user/home.html', {
             "username": request.user.username,
-            'verifiedUsers': verifiedUsers
+            'verifiedUsers': verifiedUsers,
+            'musicData': get_song_dict(available_songs)
         })
     return redirect('log_in')
 

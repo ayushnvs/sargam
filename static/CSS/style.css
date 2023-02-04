@@ -74,3 +74,12 @@ form li, .helptext {
 .dropdwn-menu:hover .drpdwn-content {
   display: block;
 }
+
+.song-list {
+  display:block;
+  color: black;
+}
+
+a.song-list:hover {
+  color: blue;
+}
