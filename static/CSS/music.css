@@ -16,22 +16,11 @@
   height: 25px;
 }
 
-/* .msc-panel > div {
-    border: 2px solid yellow;
-} */
-
-/* .msc-panel {
-  height: 100%;
-} */
-
 .msc-panel-wrapper {
   width: 100%;
-  /* height: 10%; */
-  /* border: 2px solid green; */
   position: fixed;
   bottom: 0px;
-  /* background-color: rgb(252, 226, 140); */
-  box-shadow: 0 -2px 5px gray;
+  box-shadow: 0 -2px 5px -3px gray;
 }
 
 .msc-timer {
@@ -68,9 +57,8 @@
 }
 
 .msc-buttons {
-  /* width: 100%; */
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   margin: auto;
 }
@@ -88,15 +76,70 @@
   position: absolute;
   top: 50%;
   left: 25%;
-  transform: translate(-50%);
+  transform: translateY(-50%);
   width: 10px;
   height: 30px;
   border-radius: 2px;
   background: #5f7a61;
   transition: 0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 .play-button span:nth-child(2) {
   left: 55%;
   transform-origin: center;
+}
+
+.play-button.pause span:nth-child(2) {
+  transform: translateY(-50%) scaleY(0);
+}
+
+.play-button.pause span:nth-child(1) {
+  width: 35%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 50%, 100% 50%, 0% 100%);
+}
+
+.play-button.pause {
+  animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0;
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgb(235, 235, 232);
+  }
+  100% {
+    box-shadow: 0 0 0 5px rgb(224, 224, 222);
+  }
+}
+
+.fb-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.forward span {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background: #5f7a61;
+  clip-path: polygon(100% 0, 80% 50%, 100% 100%, 0 50%);
+}
+
+.backward span {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background: #5f7a61;
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 20% 50%);
 }
