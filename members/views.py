@@ -7,16 +7,38 @@ import os
 verifiedUsers = ['ayushvns', 'akanksha', 'ayushm']
 
 available_songs = os.listdir('./static/Songs')
+
+def cleanup_song_name(song_name):
+    split_terms = ['-','_']
+    for terms in split_terms:
+        tokens = song_name.split(terms)
+        print(tokens)
+        song_name = ' '.join(tokens)
+
+    if '(' in song_name and ')' in song_name:
+        # print(song_name)
+        idx1 = song_name.index('(')
+        idx2 = song_name.index(')')
+        song_name = song_name[0:idx1] + song_name[idx2+1:]
+        if '(' in song_name:
+            idx1 = song_name.index('(')
+            song_name = song_name[0:idx1]
+    elif '(' in song_name:
+        idx1 = song_name.index('(')
+        song_name = song_name[0:idx1]
+        
+    return song_name
+
 def get_song_dict(available_songs):
     Dict = []
     for songs in available_songs:
         song_path = f'/static/Songs/{songs}'
         # print('.' in songs)
-        song_name = songs.split('.')[0]
+        raw_song_name = songs.split('.')[0]
+        song_name  = cleanup_song_name(raw_song_name)
+
         Dict.append({'name': song_name, 'path': song_path})
     return Dict
-
-# print(get_song_dict(available_songs))
 
 
 def login_view(request, *args, **kwargs):

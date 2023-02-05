@@ -78,6 +78,7 @@ form li, .helptext {
 .song-list {
   display:block;
   color: black;
+  text-decoration: none;
 }
 
 a.song-list:hover {

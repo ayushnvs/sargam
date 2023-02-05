@@ -1,19 +1,37 @@
 {% load static %}
 
 <div class="text-center pt-2 pb-4 mt-4 mb-2">
-    <mark class="h2">Welcome to Sargam: Listen Originals</mark>
+    <h1 class="h2"><b>Sargam Player</b></h1>
 </div>
 
 {% if username in verifiedUsers %}
-<div class="mt-4 pt-4 text-center">
-    <audio controls preload="metadata" muted>
-        <source src="{% static 'Songs/Mera Aapki Kripa Se-Krishan Das Ji__Raag.Me__.mp3' %}" type="audio/mp3">
-    </audio>
+<div id="cover"></div>
+<div class="container">
+    <div class="song-info">
+        <p class="title">Title</p>
+        <p class="album">Album</p>
+        <p class="author">Author</p>
+    </div>
+    
+    <div class="upload-song">
+        <p class="upload-text">Upload Song</p>
+    </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 {% else %}
 <div class="text-center" style="color:red">
     <p class="h3">Site still in development</p>
     <p class="lead">You are not yet authorised to see the music/songs and related backend/frontend developments.</p>
-    <p class="lead">But don't worry! Either you can contact to admin or You can wait until the next release.</p>
+    <p class="lead">But don't worry! Either you can contact admin or You can wait until the next release.</p>
 </div>
 {% endif %}
