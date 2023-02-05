@@ -12,7 +12,6 @@ def cleanup_song_name(song_name):
     split_terms = ['-','_']
     for terms in split_terms:
         tokens = song_name.split(terms)
-        print(tokens)
         song_name = ' '.join(tokens)
 
     if '(' in song_name and ')' in song_name:
