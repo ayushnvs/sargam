@@ -23,7 +23,7 @@ div.metadata-container {
     background-position: center;
     border-radius: 2%;
     border: 1px solid lightgrey;
-    box-shadow: 2px 2px 3px lightgray;
+    box-shadow: 2px 2px 3px gray;
 }
 
 div.metadata-info {
@@ -43,6 +43,10 @@ div.song-info {
     align-items: center;
     border-radius: 2%;
     border: 1px solid lightgrey;
+}
+
+.song-info .title, .song-info .album {
+    color: black;
 }
 
 div.upload-song {
