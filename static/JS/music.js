@@ -22,14 +22,19 @@ const playMusic = () => {
 
 listedSongs.forEach((listedSong) => {
     listedSong.addEventListener('click', () => {
+        listedSongs.forEach((song) => song.querySelector('a').style.color = 'black')
+
         let songPath = listedSong.querySelector('div.song-path').innerText
-        music.src = songPath
         musicName.innerText = listedSong.querySelector('a').innerText
+        music.src = songPath
         currentTime.innerText = '00:00'
         setTimeout(() => {
             seekBar.max = music.duration
             songDuration.innerText = formatTime(music.duration)
-        }, 300)
+        }, 500)
+
+        listedSong.querySelector('a').style.color = 'blue';
+
         playMusic()
     })
 })
